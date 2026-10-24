@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23fbbf24'/><stop offset='100%25' stop-color='%23d97706'/></linearGradient></defs><circle cx='50' cy='50' r='46' fill='%23020b08' stroke='%23d97706' stroke-width='3'/><path d='M50 18 L50 78 M35 78 L65 78 M25 32 L75 32 M25 32 L15 54 M35 32 L25 54 M65 32 L75 54 M75 32 L85 54 M10 54 Q25 62 40 54 Z M60 54 Q75 62 90 54 Z' fill='url(%23g)' stroke='%23fbbf24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>بَيّنة | المنصة القضائية الذكية للأنظمة السعودية وإدارة القضايا والمحاماة</title>
     <meta name="description" content="Bayyina: Saudi LegalTech & Judicial Intelligence Suite. المدونة الذكية للأنظمة السعودية، محاكي دورة حياة القضايا وناجز، الحاسبات القضائية والعمالية، مصفوفة البينات ونظام الإثبات، ومحرر اللوائح والعقود المعتمد." />
-    <!-- Preconnect Fonts -->
+    <!-- Preconnect & Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('bayyina_theme') || 'dark';
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>

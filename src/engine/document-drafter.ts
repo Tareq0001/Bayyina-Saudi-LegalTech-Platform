@@ -118,120 +118,188 @@ export function generatePleadingHtml(data: PleadingFormData): string {
   const isRetainer = data.templateType === 'retainer_agreement';
 
   return `
-    <div class="judicial-doc-container" dir="rtl" style="font-family: 'Tajawal', 'Cairo', sans-serif; line-height: 1.8; color: #0f172a; padding: 2.5rem; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; max-width: 860px; margin: 0 auto; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);">
-      <!-- Official Header -->
-      <div style="border-bottom: 2px solid #064e3b; padding-bottom: 1.5rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <div style="font-size: 1.15rem; font-weight: 800; color: #064e3b;">المملكة العربية السعودية</div>
-          <div style="font-size: 0.95rem; color: #334155;">وزارة العدل - منصة التقاضي الإلكتروني (ناجز)</div>
-          <div style="font-size: 0.9rem; color: #64748b; margin-top: 0.25rem;">${data.courtName} - ${data.circuitName}</div>
+    <div class="judicial-doc-container official-parchment-sheet" dir="rtl">
+      <!-- Islamic Calligraphic Basmala Header -->
+      <div class="judicial-basmala-row">
+        <div class="basmala-ornament-left">❖</div>
+        <div class="basmala-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <div class="basmala-ornament-right">❖</div>
+      </div>
+
+      <!-- Official Kingdom Header & Najiz Electronic Verification -->
+      <div class="official-judicial-header">
+        <div class="header-seal-column">
+          <div class="seal-kingdom-name">المملكة العربية السعودية</div>
+          <div class="seal-ministry-name">وزارة العدل - منصة التقاضي الإلكتروني (ناجز)</div>
+          <div class="seal-court-spec">${data.courtName} - ${data.circuitName}</div>
         </div>
-        <div style="text-align: left; font-size: 0.85rem; color: #475569; border: 1px solid #e2e8f0; padding: 0.5rem 1rem; border-radius: 8px; background: #f8fafc;">
-          <div><strong>رقم القيد:</strong> ${data.caseNumber || '451082914'}</div>
-          <div><strong>السنة:</strong> ${data.caseYear || '1445هـ'}</div>
-          <div><strong>التاريخ:</strong> ${data.contractDate || '1445/07/15هـ'}</div>
+
+        <div class="header-emblem-column">
+          <div class="emblem-judicial-crest">⚖️</div>
+          <div class="emblem-saudi-tag">وثيقة قضائية رسمية</div>
+        </div>
+
+        <div class="header-electronic-badge">
+          <div class="qr-watermark-box">
+            <div class="qr-code-graphic">
+              <!-- Inline QR Stamp Pattern -->
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                <rect width="44" height="44" rx="4" fill="#064e3b" fill-opacity="0.08"/>
+                <rect x="4" y="4" width="14" height="14" rx="2" stroke="#064e3b" stroke-width="2"/>
+                <rect x="8" y="8" width="6" height="6" fill="#064e3b"/>
+                <rect x="26" y="4" width="14" height="14" rx="2" stroke="#064e3b" stroke-width="2"/>
+                <rect x="30" y="8" width="6" height="6" fill="#064e3b"/>
+                <rect x="4" y="26" width="14" height="14" rx="2" stroke="#064e3b" stroke-width="2"/>
+                <rect x="8" y="30" width="6" height="6" fill="#064e3b"/>
+                <circle cx="26" cy="26" r="3" fill="#d97706"/>
+                <rect x="32" y="26" width="8" height="3" fill="#064e3b"/>
+                <rect x="26" y="34" width="14" height="6" fill="#064e3b"/>
+              </svg>
+            </div>
+            <div class="qr-verification-details">
+              <div><strong>رقم القيد:</strong> ${data.caseNumber || '451082914'}</div>
+              <div><strong>السنة:</strong> ${data.caseYear || '1445هـ'}</div>
+              <div><strong>التاريخ:</strong> ${data.contractDate || '1445/07/15هـ'}</div>
+            </div>
+          </div>
+          <div class="najiz-verified-strip">✓ موثق إلكترونياً عبر منصة ناجز العدلية</div>
         </div>
       </div>
 
-      <!-- Document Title -->
-      <div style="text-align: center; margin: 2rem 0;">
-        <span style="display: inline-block; background: #f0fdf4; color: #064e3b; border: 1px solid #86efac; padding: 0.6rem 2rem; border-radius: 9999px; font-weight: 800; font-size: 1.25rem; letter-spacing: 0.5px;">
-          ${titles[data.templateType]}
-        </span>
+      <!-- Golden Judicial Pleading Title Banner -->
+      <div class="judicial-title-banner">
+        <div class="banner-ribbon-line"></div>
+        <div class="banner-title-text">${titles[data.templateType]}</div>
+        <div class="banner-ribbon-line"></div>
       </div>
 
-      <!-- Parties Section -->
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.75rem;">
-        <div style="margin-bottom: 0.75rem;">
-          <strong style="color: #064e3b;">${isRetainer ? 'الطرف الأول (الموكل):' : 'المدعي (أو المستأنف):'}</strong>
-          <span>${data.claimantName}</span> | <strong>الهوية / السجل:</strong> <span>${data.claimantId}</span>
-          <div style="font-size: 0.9rem; color: #64748b; margin-top: 0.2rem;">العنوان الوطني: ${data.claimantAddress}</div>
+      <!-- Parties Block (الخصوم وصفاتهم) -->
+      <div class="judicial-parties-card">
+        <div class="party-entry party-claimant">
+          <div class="party-role-tag">${isRetainer ? 'الطرف الأول (الموكل):' : 'المدعي (أو المستأنف):'}</div>
+          <div class="party-identity">
+            <span class="party-name-strong">${data.claimantName}</span>
+            <span class="party-id-chip">السجل / الهوية: <strong>${data.claimantId}</strong></span>
+          </div>
+          <div class="party-address-line">📌 العنوان الوطني المعتمد: ${data.claimantAddress}</div>
         </div>
-        <div style="border-top: 1px dashed #cbd5e1; padding-top: 0.75rem;">
-          <strong style="color: #b45309;">${isRetainer ? 'الطرف الثاني (المحامي الوكيل):' : 'المدعى عليه (أو المستأنف ضده):'}</strong>
-          <span>${data.defendantName}</span> | <strong>الهوية / السجل:</strong> <span>${data.defendantId}</span>
-          <div style="font-size: 0.9rem; color: #64748b; margin-top: 0.2rem;">العنوان الوطني: ${data.defendantAddress}</div>
+
+        <div class="parties-divider-line">
+          <span class="divider-vs">ضــــد</span>
         </div>
-        <div style="border-top: 1px dashed #cbd5e1; padding-top: 0.75rem; margin-top: 0.75rem; font-size: 0.95rem;">
-          <strong style="color: #0f172a;">موضوع النزاع / العقد:</strong> <span>${data.contractSubject}</span> 
-          ${data.claimAmountSar > 0 ? `| <strong>قيمة المطالبة:</strong> <span style="font-weight: 700; color: #047857;">${data.claimAmountSar.toLocaleString('ar-SA')} ر.س</span>` : ''}
+
+        <div class="party-entry party-defendant">
+          <div class="party-role-tag defendant-role">${isRetainer ? 'الطرف الثاني (المحامي الوكيل):' : 'المدعى عليه (أو المستأنف ضده):'}</div>
+          <div class="party-identity">
+            <span class="party-name-strong">${data.defendantName}</span>
+            <span class="party-id-chip">السجل / الهوية: <strong>${data.defendantId}</strong></span>
+          </div>
+          <div class="party-address-line">📌 العنوان الوطني المعتمد: ${data.defendantAddress}</div>
+        </div>
+
+        <div class="litigation-subject-bar">
+          <div class="subj-col"><strong>موضوع النزاع / العقد:</strong> <span>${data.contractSubject}</span></div>
+          ${data.claimAmountSar > 0 ? `
+            <div class="claim-val-col">
+              <strong>قيمة المطالبة:</strong>
+              <span class="sar-amount">${data.claimAmountSar.toLocaleString('ar-SA')} ر.س</span>
+            </div>
+          ` : ''}
         </div>
       </div>
 
-      <!-- Facts Section -->
-      <div style="margin-bottom: 1.75rem;">
-        <h4 style="font-size: 1.1rem; color: #064e3b; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span style="width: 8px; height: 8px; background: #064e3b; border-radius: 50%; display: inline-block;"></span>
-          أولاً: الوقائع والخلفية الموضوعية
-        </h4>
-        <p style="text-align: justify; color: #334155; line-height: 1.9; white-space: pre-line; background: #ffffff; padding: 0.5rem 0.25rem;">
+      <!-- Facts Section (أولاً: الوقائع) -->
+      <div class="judicial-section-block">
+        <div class="section-ornate-header">
+          <span class="section-num-emblem">أولاً</span>
+          <h4 class="section-header-title">الوقائع والخلفية الموضوعية للدعوى</h4>
+        </div>
+        <div class="section-body-text">
           ${data.factualBackground}
-        </p>
+        </div>
       </div>
 
-      <!-- Formal & Substantive Defenses (if present) -->
+      <!-- Formal Defenses (if present) -->
       ${data.formalDefenses ? `
-        <div style="margin-bottom: 1.75rem;">
-          <h4 style="font-size: 1.1rem; color: #b45309; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-            <span style="width: 8px; height: 8px; background: #b45309; border-radius: 50%; display: inline-block;"></span>
-            ثانياً: الدفوع الشكلية الأولية
-          </h4>
-          <p style="text-align: justify; color: #334155; line-height: 1.9; white-space: pre-line;">
+        <div class="judicial-section-block defense-block">
+          <div class="section-ornate-header gold-header">
+            <span class="section-num-emblem gold-emblem">ثانياً</span>
+            <h4 class="section-header-title">الدفوع الشكلية الأولية وسقوط الخصومة</h4>
+          </div>
+          <div class="section-body-text">
             ${data.formalDefenses}
-          </p>
+          </div>
         </div>
       ` : ''}
 
+      <!-- Substantive Defenses (if present) -->
       ${data.substantiveDefenses ? `
-        <div style="margin-bottom: 1.75rem;">
-          <h4 style="font-size: 1.1rem; color: #047857; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-            <span style="width: 8px; height: 8px; background: #047857; border-radius: 50%; display: inline-block;"></span>
-            ${data.formalDefenses ? 'ثالثاً:' : 'ثانياً:'} الأسانيد الموضوعية ودحض الدعوى
-          </h4>
-          <p style="text-align: justify; color: #334155; line-height: 1.9; white-space: pre-line;">
+        <div class="judicial-section-block">
+          <div class="section-ornate-header">
+            <span class="section-num-emblem">${data.formalDefenses ? 'ثالثاً' : 'ثانياً'}</span>
+            <h4 class="section-header-title">الأسانيد الموضوعية والدفوع الجوهرية</h4>
+          </div>
+          <div class="section-body-text">
             ${data.substantiveDefenses}
-          </p>
+          </div>
         </div>
       ` : ''}
 
-      <!-- Statutory Grounding -->
-      <div style="margin-bottom: 1.75rem; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1rem 1.25rem; border-radius: 8px;">
-        <h4 style="font-size: 1rem; color: #064e3b; margin: 0 0 0.5rem 0; font-weight: 700;">الأسانيد والمواد النظامية المعتمدة:</h4>
-        <div style="color: #14532d; font-size: 0.95rem; font-weight: 600;">${data.statutoryArticles}</div>
+      <!-- Statutory Grounding (الأسانيد النظامية) -->
+      <div class="statutory-grounding-box">
+        <div class="grounding-header">
+          <span class="grounding-icon">⚖️</span>
+          <strong>الأسانيد والمواد النظامية المعتمدة في المرافعة:</strong>
+        </div>
+        <div class="grounding-content">
+          ${data.statutoryArticles}
+        </div>
       </div>
 
-      <!-- Relief Sought / Requests -->
-      <div style="margin-bottom: 2rem;">
-        <h4 style="font-size: 1.1rem; color: #064e3b; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span style="width: 8px; height: 8px; background: #d97706; border-radius: 50%; display: inline-block;"></span>
-          ${isRetainer ? 'التزامات الطرفين والأتعاب:' : 'الطلبات الختامية الجازمة:'}
-        </h4>
-        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 1.25rem; color: #0f172a; white-space: pre-line; line-height: 1.9;">
+      <!-- Relief Sought (الطلبات الختامية الجازمة) -->
+      <div class="judicial-section-block relief-block">
+        <div class="section-ornate-header royal-header">
+          <span class="section-num-emblem royal-emblem">ختاماً</span>
+          <h4 class="section-header-title">${isRetainer ? 'التزامات الطرفين وجدول الأتعاب:' : 'الطلبات الختامية الجازمة:'}</h4>
+        </div>
+        <div class="relief-body-card">
           ${data.requestedRelief}
         </div>
       </div>
 
       ${isRetainer ? `
         <!-- Retainer Financial Schedule -->
-        <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 1.25rem; margin-bottom: 2rem;">
-          <h4 style="color: #92400e; margin: 0 0 0.75rem 0; font-size: 1rem;">الجدول المالي للأتعاب المتفق عليها:</h4>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-            <div>الأتعاب المقدمة الثابتة: <strong>${data.retainerAmountSar.toLocaleString('ar-SA')} ر.س</strong></div>
-            <div>نسبة أتعاب النجاح والتحصيل: <strong>${data.contingencyPercent}% من المبالغ المحصلة</strong></div>
+        <div class="retainer-financial-schedule">
+          <div class="schedule-title">الجدول المالي للأتعاب المتفق عليها وفق لائحة المحاماة:</div>
+          <div class="schedule-grid">
+            <div class="sched-item">
+              <span class="sched-lbl">الأتعاب المقدمة الثابتة:</span>
+              <strong class="sched-val">${data.retainerAmountSar.toLocaleString('ar-SA')} ر.س</strong>
+            </div>
+            <div class="sched-item">
+              <span class="sched-lbl">نسبة أتعاب النجاح والتحصيل:</span>
+              <strong class="sched-val">${data.contingencyPercent}% من المبالغ المحصلة</strong>
+            </div>
           </div>
         </div>
       ` : ''}
 
-      <!-- Signatures Footer -->
-      <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid #064e3b; display: flex; justify-content: space-between; align-items: flex-start;">
-        <div>
-          <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">مقدمه لفضيلتكم /</div>
-          <div style="font-size: 1rem; color: #064e3b; font-weight: 800; margin-top: 0.25rem;">${data.attorneyName}</div>
-          <div style="font-size: 0.85rem; color: #64748b;">رخصة المحاماة رقم: ${data.licenseNumber} - الهيئة السعودية للمحامين</div>
+      <!-- Signatures & Official Bar Certification -->
+      <div class="judicial-doc-footer">
+        <div class="attorney-signature-box">
+          <div class="sig-label">مقدمه لفضيلتكم /</div>
+          <div class="attorney-name">${data.attorneyName}</div>
+          <div class="license-info">رخصة المحاماة رقم: <strong>${data.licenseNumber}</strong> - الهيئة السعودية للمحامين</div>
+          <div class="signature-line-mark">التوقيع والاعتماد: .......................................</div>
         </div>
-        <div style="text-align: center; border: 2px dashed #064e3b; border-radius: 8px; padding: 0.75rem 1.5rem; color: #064e3b; font-size: 0.85rem; background: #f0fdf4;">
-          <div>خاتم التوقيع القضائي والتوثيق</div>
-          <div style="margin-top: 0.25rem; font-weight: 800; font-size: 0.9rem;">منصة بَيّنة الذكية للتقاضي</div>
+
+        <div class="official-stamp-box">
+          <div class="stamp-inner-border">
+            <div class="stamp-emblem">⚖️</div>
+            <div class="stamp-org">منصة بَيّنة الذكية للتقاضي</div>
+            <div class="stamp-audit">صك قضائي رسمي معتمد</div>
+            <div class="stamp-id">ID: SA-${data.caseNumber || '451082914'}-NZ</div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,17 +1,94 @@
 /* =========================================================================
    بَيّنة (Bayyina) - Saudi LegalTech & Judicial Intelligence Suite
-   Color Palette: Royal Judicial Slate (#0f172a), Saudi Emerald (#064e3b),
-                  Imperial Gold (#d97706), Crisp Judicial Paper (#f8fafc).
+   World-Class Luxury GovTech / LegalTech Design System
+   Dual Theme System: Luxury Obsidian Dark (Default) & Ivory Judicial Paper
+   Fonts: Tajawal (UI), Cairo (Headers), Amiri / Aref Ruqaa (Judicial Deeds)
    ========================================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap');
 
 :root {
+  /* =======================================================================
+     DEFAULT: LUXURY OBSIDIAN DARK THEME (Awwwards Prestige GovTech)
+     ======================================================================= */
+  --bg-page: #020b08;
+  --bg-mesh: radial-gradient(circle at 18% 12%, rgba(6, 78, 59, 0.45) 0%, transparent 45%),
+             radial-gradient(circle at 82% 85%, rgba(10, 25, 38, 0.55) 0%, transparent 45%),
+             radial-gradient(circle at 50% 50%, rgba(2, 15, 11, 0.9) 0%, #020b08 100%);
+
+  --surface-card: rgba(15, 23, 42, 0.75);
+  --surface-card-hover: rgba(22, 34, 60, 0.88);
+  --surface-subtle: rgba(2, 20, 16, 0.65);
+  --surface-header: rgba(2, 11, 8, 0.88);
+  --surface-input: rgba(10, 20, 28, 0.85);
+  --surface-glass-border: rgba(217, 119, 6, 0.25);
+  --surface-glass-border-hover: rgba(251, 191, 36, 0.5);
+  --card-blur: 16px;
+
+  --primary-emerald: #10b981;
+  --emerald-medium: #059669;
+  --emerald-dark: #064e3b;
+  --emerald-light: #34d399;
+  --emerald-bg: rgba(6, 78, 59, 0.35);
+  --emerald-border: rgba(16, 185, 129, 0.35);
+  --emerald-glow: rgba(16, 185, 129, 0.3);
+
+  --judicial-slate: #f8fafc;
+  --slate-medium: #e2e8f0;
+  --slate-muted: #cbd5e1;
+  --slate-subtle: #94a3b8;
+  --slate-border: rgba(255, 255, 255, 0.1);
+  --slate-bg: rgba(15, 23, 42, 0.5);
+
+  --imperial-gold: #f59e0b;
+  --gold-light: #fbbf24;
+  --gold-dark: #b45309;
+  --gold-bg: rgba(217, 119, 6, 0.15);
+  --gold-border: rgba(245, 158, 11, 0.35);
+  --gold-glow: rgba(245, 158, 11, 0.35);
+
+  --pure-white: #ffffff;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --text-gold: #fbbf24;
+  --text-emerald: #34d399;
+
+  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --card-shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(217, 119, 6, 0.22);
+
+  --font-arabic: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Cairo', 'Tajawal', sans-serif;
+  --font-traditional: 'Amiri', 'Aref Ruqaa', serif;
+  --font-latin: 'Inter', -apple-system, sans-serif;
+}
+
+/* =========================================================================
+   PRESTIGE LIGHT THEME (Ivory Judicial Paper)
+   ========================================================================= */
+[data-theme="light"] {
+  --bg-page: #faf8f5;
+  --bg-mesh: radial-gradient(circle at 12% 15%, rgba(240, 230, 215, 0.8) 0%, transparent 40%),
+             radial-gradient(circle at 88% 85%, rgba(230, 244, 238, 0.75) 0%, transparent 40%),
+             #faf8f5;
+
+  --surface-card: rgba(255, 255, 255, 0.92);
+  --surface-card-hover: #ffffff;
+  --surface-subtle: #f8fafc;
+  --surface-header: rgba(255, 255, 255, 0.96);
+  --surface-input: #ffffff;
+  --surface-glass-border: rgba(217, 119, 6, 0.22);
+  --surface-glass-border-hover: rgba(217, 119, 6, 0.5);
+  --card-blur: 12px;
+
   --primary-emerald: #064e3b;
   --emerald-medium: #047857;
+  --emerald-dark: #022c22;
   --emerald-light: #10b981;
-  --emerald-bg: #f0fdf4;
-  --emerald-border: #bbf7d0;
+  --emerald-bg: #ecfdf5;
+  --emerald-border: #a7f3d0;
+  --emerald-glow: rgba(6, 78, 59, 0.15);
 
   --judicial-slate: #0f172a;
   --slate-medium: #1e293b;
@@ -21,82 +98,150 @@
   --slate-bg: #f8fafc;
 
   --imperial-gold: #d97706;
-  --gold-dark: #b45309;
   --gold-light: #f59e0b;
+  --gold-dark: #92400e;
   --gold-bg: #fffbeb;
   --gold-border: #fde68a;
+  --gold-glow: rgba(217, 119, 6, 0.2);
 
   --pure-white: #ffffff;
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-muted: #334155;
+  --text-subtle: #64748b;
+  --text-gold: #b45309;
+  --text-emerald: #065f46;
 
-  --font-arabic: 'Tajawal', 'Cairo', sans-serif;
-  --font-latin: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --card-shadow: 0 4px 20px -2px rgba(6, 78, 59, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 15px 30px -5px rgba(6, 78, 59, 0.12), 0 0 15px rgba(217, 119, 6, 0.15);
 }
 
+/* =========================================================================
+   Global Reset & Layout
+   ========================================================================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-arabic);
-  background-color: #f1f5f9;
-  color: var(--judicial-slate);
+  background-color: var(--bg-page);
+  background-image: var(--bg-mesh);
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text-primary);
   line-height: 1.6;
   direction: rtl;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(2, 11, 8, 0.6);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d97706, #b45309);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fbbf24, #d97706);
 }
 
 /* Animations */
 .fade-in {
-  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes pulseGlow {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 8px #fbbf24); }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
 /* =========================================================================
-   Navigation Header
+   1. Prestige Navigation Header
    ========================================================================= */
 .bayyina-nav-header {
-  background: var(--pure-white);
-  border-bottom: 1px solid var(--slate-border);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  background: var(--surface-header);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border-bottom: 1px solid var(--surface-glass-border);
+  box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: all 0.3s ease;
 }
 
+/* Top Sovereign Judicial Bar */
 .top-legal-bar {
-  background: var(--judicial-slate);
-  color: #94a3b8;
+  background: linear-gradient(90deg, #022c22 0%, #064e3b 50%, #022c22 100%);
+  color: #e2e8f0;
   font-size: 0.8rem;
-  padding: 0.35rem 1.5rem;
-  border-bottom: 1px solid #1e293b;
+  padding: 0.4rem 1.5rem;
+  border-bottom: 1px solid rgba(217, 119, 6, 0.3);
+}
+
+[data-theme="light"] .top-legal-bar {
+  background: linear-gradient(90deg, #064e3b 0%, #047857 50%, #064e3b 100%);
 }
 
 .legal-bar-content {
-  max-width: 1360px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.royal-lead-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ksa-emblem {
+  font-size: 1rem;
+}
+
 .royal-decree-lead {
-  font-weight: 600;
-  color: #e2e8f0;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 0.2px;
 }
 
 .top-bar-right {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.75rem;
+  font-size: 0.78rem;
 }
 
 .pulse-live {
@@ -106,96 +251,159 @@ body {
 }
 
 @keyframes pulseAnim {
-  0% { opacity: 0.4; }
-  50% { opacity: 1; }
-  100% { opacity: 0.4; }
+  0% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); text-shadow: 0 0 6px #22c55e; }
+  100% { opacity: 0.3; transform: scale(0.9); }
 }
 
+.status-badge-live {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.royal-seal-mini {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+/* Main Brand Row */
 .main-header-row {
-  max-width: 1360px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0.85rem 1.5rem;
+  padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .brand-section {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
+/* Polished 24K Gold Scale Emblem Box */
 .brand-emblem-box {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, var(--primary-emerald), #022c22);
-  border: 2px solid var(--imperial-gold);
-  border-radius: 12px;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #021a13 0%, #064e3b 100%);
+  border: 2px solid #d97706;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(6, 78, 59, 0.2);
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(251, 191, 36, 0.4);
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.brand-emblem {
-  font-size: 1.6rem;
+.brand-emblem-box:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+  border-color: #fbbf24;
+}
+
+.emblem-glow-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 18px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 70%);
+  z-index: 0;
+  animation: pulseGlow 3s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.brand-scale-svg {
+  width: 38px;
+  height: 38px;
+  z-index: 1;
+}
+
+.brand-text-box {
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-name-row {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
 }
 
 .brand-title {
-  font-size: 1.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
   font-weight: 900;
-  color: var(--primary-emerald);
   letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: 0 2px 10px rgba(217, 119, 6, 0.2);
 }
 
 .brand-version-badge {
-  background: var(--gold-bg);
-  color: var(--gold-dark);
-  border: 1px solid var(--gold-border);
-  font-size: 0.7rem;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(245, 158, 11, 0.1));
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+}
+
+.brand-status-chip {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 0.15rem 0.5rem;
+  padding: 0.15rem 0.55rem;
   border-radius: 9999px;
 }
 
 .brand-subtitle {
-  font-size: 0.85rem;
-  color: var(--slate-subtle);
+  font-size: 0.88rem;
+  color: var(--text-muted);
   font-weight: 500;
+  margin-top: 0.15rem;
 }
 
+/* Quick Controls */
 .header-controls {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .gavel-btn {
-  background: linear-gradient(135deg, var(--imperial-gold), var(--gold-dark));
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
   color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-weight: 700;
+  border: 1px solid #fbbf24;
+  border-radius: 10px;
+  padding: 0.55rem 1.15rem;
+  font-weight: 800;
   font-size: 0.88rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 3px 8px rgba(217, 119, 6, 0.3);
-  transition: all 0.15s ease;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gavel-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 12px rgba(217, 119, 6, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.5);
+  filter: brightness(1.08);
 }
 
 .gavel-btn:active {
@@ -203,97 +411,223 @@ body {
 }
 
 .ctrl-btn {
-  background: var(--slate-bg);
-  border: 1px solid var(--slate-border);
-  color: var(--judicial-slate);
-  padding: 0.5rem 0.8rem;
-  border-radius: 8px;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-glass-border);
+  color: var(--text-primary);
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s ease;
 }
 
 .ctrl-btn:hover {
-  background: #e2e8f0;
+  background: var(--surface-card-hover);
+  border-color: var(--surface-glass-border-hover);
+  color: var(--imperial-gold);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-btn {
+  border-color: rgba(245, 158, 11, 0.35);
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: #fbbf24;
+}
+
+.theme-icon {
+  font-size: 1rem;
+}
+
+.theme-label {
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .lang-btn {
   font-family: var(--font-latin);
+  font-weight: 700;
+}
+
+/* Metrics Strip Banner */
+.metrics-strip-wrapper {
+  background: rgba(2, 20, 16, 0.45);
+  border-top: 1px solid rgba(217, 119, 6, 0.15);
+  border-bottom: 1px solid rgba(217, 119, 6, 0.15);
+  padding: 0.45rem 1.5rem;
+}
+
+[data-theme="light"] .metrics-strip-wrapper {
+  background: rgba(240, 245, 242, 0.7);
+  border-color: rgba(217, 119, 6, 0.12);
+}
+
+.metrics-strip {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.m-icon {
+  font-size: 0.95rem;
+}
+
+.m-val {
+  font-weight: 900;
+  color: var(--imperial-gold);
+  font-size: 0.92rem;
+}
+
+.m-desc {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.metric-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(217, 119, 6, 0.2);
 }
 
 /* Primary Nav Tabs */
 .primary-nav-bar {
-  max-width: 1360px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0.35rem 1.5rem 0.5rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #f1f5f9;
 }
 
 .nav-tabs-cluster {
   display: flex;
-  gap: 0.35rem;
+  gap: 0.4rem;
   overflow-x: auto;
-  padding: 0.35rem 0;
+  padding: 0.25rem 0;
 }
 
 .nav-tab-item {
   background: transparent;
-  border: none;
-  padding: 0.65rem 1.15rem;
-  border-radius: 8px;
-  color: var(--slate-muted);
-  font-weight: 700;
-  font-size: 0.95rem;
+  border: 1px solid transparent;
+  padding: 0.65rem 1.25rem;
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-weight: 800;
+  font-size: 0.94rem;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: all 0.15s ease;
+  gap: 0.55rem;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
 .nav-tab-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .nav-tab-item:hover {
   background: #f1f5f9;
   color: var(--primary-emerald);
 }
 
 .nav-tab-item.active {
-  background: var(--emerald-bg);
-  color: var(--primary-emerald);
-  box-shadow: inset 0 0 0 1.5px var(--primary-emerald);
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.45), rgba(15, 23, 42, 0.8));
+  color: #f8fafc;
+  border: 1px solid var(--surface-glass-border-hover);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(251, 191, 36, 0.3);
+}
+
+[data-theme="light"] .nav-tab-item.active {
+  background: #ecfdf5;
+  color: #064e3b;
+  border: 1px solid #10b981;
+  box-shadow: 0 2px 8px rgba(6, 78, 59, 0.1);
+}
+
+/* Glowing Gold Bottom Indicator */
+.tab-indicator {
+  position: absolute;
+  bottom: -4px;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #fbbf24, #d97706, transparent);
+  border-radius: 9999px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  box-shadow: 0 0 10px #fbbf24;
+}
+
+.nav-tab-item.active .tab-indicator {
+  opacity: 1;
 }
 
 .tab-pulse-badge {
-  background: #fee2e2;
-  color: #dc2626;
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
   font-size: 0.7rem;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 9999px;
   font-weight: 800;
 }
 
 .tab-tag {
-  background: #e0f2fe;
-  color: #0369a1;
+  background: rgba(14, 165, 233, 0.2);
+  color: #7dd3fc;
+  border: 1px solid rgba(14, 165, 233, 0.4);
   font-size: 0.7rem;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 9999px;
+  font-weight: 700;
+}
+
+.tab-tag-gold {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 0.7rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 9999px;
+  font-weight: 800;
 }
 
 .header-stats-pill {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  background: var(--slate-bg);
-  border: 1px solid var(--slate-border);
-  padding: 0.35rem 1rem;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-glass-border);
+  padding: 0.4rem 1.15rem;
   border-radius: 9999px;
   font-size: 0.8rem;
-  color: var(--slate-subtle);
+  color: var(--text-muted);
+  box-shadow: var(--card-shadow);
 }
 
 .h-stat-unit {
@@ -303,28 +637,31 @@ body {
 }
 
 .h-stat-unit strong {
-  color: var(--primary-emerald);
+  color: var(--imperial-gold);
   font-size: 0.95rem;
+  font-weight: 800;
 }
 
 /* =========================================================================
    App Content Main Container
    ========================================================================= */
 #app-main-content {
-  max-width: 1360px;
-  margin: 1.5rem auto 3rem auto;
+  max-width: 1400px;
+  margin: 1.75rem auto 4rem auto;
   padding: 0 1.5rem;
 }
 
 /* =========================================================================
-   1. Regulatory Codex View
+   1. Regulatory Codex View (المدونة الذكية)
    ========================================================================= */
 .codex-header-card {
-  background: var(--pure-white);
-  border-radius: 14px;
-  border: 1px solid var(--slate-border);
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border-radius: 18px;
+  border: 1px solid var(--surface-glass-border);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
   box-shadow: var(--card-shadow);
 }
 
@@ -336,338 +673,465 @@ body {
 
 .search-icon {
   position: absolute;
-  right: 1.2rem;
-  font-size: 1.1rem;
+  right: 1.25rem;
+  font-size: 1.2rem;
   pointer-events: none;
+  filter: drop-shadow(0 0 4px #fbbf24);
 }
 
 .codex-search-input {
   width: 100%;
-  padding: 0.85rem 3rem 0.85rem 2.5rem;
-  font-size: 1rem;
-  border: 1.5px solid var(--slate-border);
-  border-radius: 10px;
+  padding: 0.95rem 3.25rem 0.95rem 2.75rem;
+  font-size: 1.05rem;
+  background: var(--surface-input);
+  color: var(--text-primary);
+  border: 1.5px solid var(--surface-glass-border);
+  border-radius: 14px;
   font-family: inherit;
-  transition: all 0.2s;
-  background: #fdfdfe;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .codex-search-input:focus {
   outline: none;
-  border-color: var(--primary-emerald);
-  box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25), 0 0 20px rgba(245, 158, 11, 0.2);
 }
 
 .clear-btn {
   position: absolute;
-  left: 1rem;
-  background: #e2e8f0;
+  left: 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
   border: none;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.clear-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
 }
 
 .statute-pills-row {
   display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
   overflow-x: auto;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.35rem;
 }
 
 .pill-btn {
-  background: var(--slate-bg);
-  border: 1px solid var(--slate-border);
-  padding: 0.45rem 0.9rem;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  padding: 0.5rem 1.15rem;
   border-radius: 9999px;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: var(--slate-muted);
+  color: var(--text-muted);
   cursor: pointer;
   white-space: nowrap;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  transition: all 0.15s;
+  gap: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pill-btn:hover {
-  background: #e2e8f0;
+  background: var(--surface-card-hover);
+  color: var(--text-primary);
+  border-color: var(--surface-glass-border-hover);
+  transform: translateY(-1px);
 }
 
 .pill-btn.active {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
   color: #ffffff;
-  border-color: var(--primary-emerald);
+  border-color: #10b981;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 .pill-btn .badge {
-  background: rgba(0,0,0,0.08);
-  padding: 0.1rem 0.4rem;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fbbf24;
+  padding: 0.12rem 0.5rem;
   border-radius: 9999px;
   font-size: 0.75rem;
+  font-weight: 800;
 }
 
 .pill-btn.active .badge {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   color: #ffffff;
 }
 
-/* Statute Section */
+/* Statute Section Card */
 .statute-section-card {
-  background: var(--pure-white);
-  border-radius: 14px;
-  border: 1px solid var(--slate-border);
-  margin-bottom: 2rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border-radius: 18px;
+  border: 1px solid var(--surface-glass-border);
+  margin-bottom: 2.25rem;
   overflow: hidden;
   box-shadow: var(--card-shadow);
+  transition: all 0.25s ease;
 }
 
 .statute-banner {
-  background: linear-gradient(to left, #f8fafc, #edfaf2);
-  border-bottom: 1px solid var(--slate-border);
-  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.35) 0%, rgba(15, 23, 42, 0.85) 100%);
+  border-bottom: 1px solid var(--surface-glass-border);
+  padding: 1.5rem 1.75rem;
+}
+
+[data-theme="light"] .statute-banner {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f8fafc 100%);
 }
 
 .statute-meta {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
   flex-wrap: wrap;
 }
 
 .decree-tag, .year-tag, .cat-tag {
   font-size: 0.78rem;
-  font-weight: 700;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  letter-spacing: 0.2px;
 }
 
-.decree-tag { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
-.year-tag { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
-.cat-tag { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+.decree-tag {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+}
+
+[data-theme="light"] .decree-tag {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.year-tag {
+  background: rgba(14, 165, 233, 0.2);
+  color: #7dd3fc;
+  border: 1px solid rgba(14, 165, 233, 0.4);
+}
+
+[data-theme="light"] .year-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.cat-tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] .cat-tag {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #cbd5e1;
+}
 
 .statute-title {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--primary-emerald);
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .statute-desc {
-  color: var(--slate-subtle);
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  line-height: 1.7;
 }
 
+/* Articles Grid */
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 1.25rem;
-  padding: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+  padding: 1.75rem;
 }
 
 .article-card {
-  background: #ffffff;
-  border: 1px solid var(--slate-border);
-  border-radius: 12px;
-  padding: 1.25rem;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 14px;
+  padding: 1.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .article-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: var(--card-shadow-hover);
-  border-color: #94a3b8;
+  border-color: var(--surface-glass-border-hover);
+  background: var(--surface-card-hover);
 }
 
 .article-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
+/* 24K Gold Embossed Article Badge */
 .article-num-badge {
-  background: var(--slate-bg);
-  color: var(--judicial-slate);
-  border: 1px solid var(--slate-border);
-  font-weight: 800;
-  font-size: 0.8rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.25), rgba(245, 158, 11, 0.1));
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  font-weight: 900;
+  font-size: 0.82rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .article-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 .weight-badge {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  padding: 0.2rem 0.55rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  letter-spacing: 0.2px;
+}
+
+.weight-badge.weight-conclusive {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+[data-theme="light"] .weight-badge.weight-conclusive {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #86efac;
+}
+
+.weight-badge.weight-high {
+  background: rgba(14, 165, 233, 0.2);
+  color: #7dd3fc;
+  border: 1px solid rgba(14, 165, 233, 0.4);
+}
+
+.weight-badge.weight-medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
 .bookmark-btn {
   background: transparent;
   border: none;
-  font-size: 1.2rem;
-  color: #94a3b8;
+  font-size: 1.25rem;
+  color: #64748b;
   cursor: pointer;
-  transition: color 0.15s;
+  transition: all 0.2s ease;
+}
+
+.bookmark-btn:hover {
+  transform: scale(1.15);
+  color: #fbbf24;
 }
 
 .bookmark-btn.active {
-  color: #eab308;
+  color: #fbbf24;
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6));
 }
 
 .article-heading {
-  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
   font-weight: 800;
-  color: var(--judicial-slate);
-  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+  line-height: 1.5;
 }
 
 .article-text-preview {
-  font-size: 0.9rem;
-  color: var(--slate-muted);
-  line-height: 1.7;
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.8;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .article-tags-row {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
 }
 
 .tag-pill {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] .tag-pill {
   background: #f1f5f9;
   color: #475569;
-  padding: 0.15rem 0.45rem;
-  border-radius: 4px;
+  border-color: #cbd5e1;
 }
 
 .article-card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 0.75rem;
-  border-top: 1px dashed var(--slate-border);
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--surface-glass-border);
 }
 
 .precedents-indicator {
-  font-size: 0.78rem;
-  color: var(--emerald-medium);
-  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text-emerald);
+  font-weight: 800;
 }
 
 .inspect-btn {
-  background: var(--emerald-bg);
-  color: var(--primary-emerald);
-  border: 1px solid var(--emerald-border);
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: 700;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.4), rgba(4, 120, 87, 0.3));
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 800;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .inspect-btn:hover {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, #064e3b, #047857);
   color: #ffffff;
+  border-color: #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transform: translateY(-1px);
 }
 
 /* =========================================================================
-   2. Najiz Litigation Simulator View
+   2. Najiz Litigation Simulator View (محاكي ناجز 6 مراحل)
    ========================================================================= */
 .scenarios-selector-bar {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 14px;
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
   box-shadow: var(--card-shadow);
 }
 
 .selector-title-row {
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
 }
 
 .selector-badge {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--primary-emerald);
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--text-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .scenario-buttons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 0.95rem;
 }
 
 .scenario-nav-btn {
-  background: var(--slate-bg);
-  border: 1.5px solid var(--slate-border);
-  border-radius: 10px;
-  padding: 0.85rem;
+  background: var(--surface-subtle);
+  border: 1.5px solid var(--surface-glass-border);
+  border-radius: 12px;
+  padding: 1.1rem;
   text-align: right;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .scenario-nav-btn:hover {
-  border-color: var(--emerald-medium);
-  background: #f8fafc;
+  border-color: var(--surface-glass-border-hover);
+  background: var(--surface-card-hover);
+  transform: translateY(-2px);
 }
 
 .scenario-nav-btn.active {
-  background: #f0fdf4;
-  border-color: var(--primary-emerald);
-  box-shadow: 0 0 0 2px rgba(6, 78, 59, 0.15);
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.5) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border-color: #fbbf24;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.25), inset 0 1px 0 rgba(251, 191, 36, 0.3);
+}
+
+[data-theme="light"] .scenario-nav-btn.active {
+  background: #ecfdf5;
+  border-color: #064e3b;
+  box-shadow: 0 4px 15px rgba(6, 78, 59, 0.15);
 }
 
 .sc-btn-num {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 800;
   color: var(--imperial-gold);
 }
 
 .sc-btn-title {
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   font-weight: 800;
-  color: var(--judicial-slate);
-  margin: 0.25rem 0;
-  line-height: 1.4;
+  color: var(--text-primary);
+  margin: 0.35rem 0;
+  line-height: 1.5;
 }
 
 .sc-btn-court {
-  font-size: 0.78rem;
-  color: var(--slate-subtle);
+  font-size: 0.82rem;
+  color: var(--text-muted);
 }
 
 /* Case Dossier Card */
 .case-dossier-card {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 18px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
   box-shadow: var(--card-shadow);
 }
 
@@ -675,76 +1139,80 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .dossier-badge {
-  background: #fef3c7;
-  color: #b45309;
-  border: 1px solid #fde68a;
-  font-size: 0.75rem;
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 0.78rem;
   font-weight: 800;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
   display: inline-block;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
 }
 
 .dossier-title {
-  font-size: 1.35rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
   font-weight: 900;
-  color: var(--primary-emerald);
+  color: var(--text-primary);
 }
 
 .dossier-court-name {
-  font-size: 0.9rem;
-  color: var(--slate-subtle);
-  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
 }
 
 .dossier-stats-block {
   display: flex;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .stat-box {
-  background: var(--slate-bg);
-  border: 1px solid var(--slate-border);
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 110px;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .stat-label {
-  font-size: 0.75rem;
-  color: var(--slate-subtle);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 .stat-value {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--judicial-slate);
-  margin-top: 0.15rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-top: 0.2rem;
 }
 
 .stat-value.highlight-gold {
   color: var(--imperial-gold);
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.3));
 }
 
 .dossier-parties-row {
   display: flex;
   align-items: center;
-  background: #f8fafc;
-  border: 1px solid var(--slate-border);
-  border-radius: 10px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1rem;
-  gap: 1.5rem;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 14px;
+  padding: 1.15rem 1.5rem;
+  margin-bottom: 1.25rem;
+  gap: 1.75rem;
 }
 
 .party-col {
@@ -754,60 +1222,71 @@ body {
 .party-label {
   display: block;
   font-size: 0.8rem;
-  color: var(--slate-subtle);
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
 }
 
 .party-name {
-  font-size: 1rem;
-  color: var(--judicial-slate);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
 }
 
 .party-vs {
   font-weight: 900;
-  color: var(--imperial-gold);
-  background: var(--gold-bg);
-  border: 1px solid var(--gold-border);
-  padding: 0.25rem 0.65rem;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  padding: 0.4rem 0.85rem;
   border-radius: 50%;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
 }
 
 .dossier-facts {
-  font-size: 0.95rem;
-  color: var(--slate-muted);
-  line-height: 1.8;
-  margin-bottom: 1rem;
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
 }
 
 .governing-laws-row {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .gov-label {
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--slate-muted);
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--text-muted);
 }
 
 .law-tag {
-  background: #ecfdf5;
-  color: #065f46;
-  border: 1px solid #a7f3d0;
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
 }
 
-/* 6-Stage Pipeline */
+[data-theme="light"] .law-tag {
+  background: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+/* 6-Stage Glowing Pipeline */
 .pipeline-section-card {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 14px;
-  padding: 1.5rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 18px;
+  padding: 1.75rem;
   box-shadow: var(--card-shadow);
 }
 
@@ -815,42 +1294,47 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .pipeline-title h3 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--primary-emerald);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--text-primary);
 }
 
 .pipeline-sub {
-  font-size: 0.85rem;
-  color: var(--slate-subtle);
+  font-size: 0.88rem;
+  color: var(--text-muted);
 }
 
 .advance-stage-btn {
-  background: linear-gradient(135deg, var(--primary-emerald), #047857);
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
   color: #ffffff;
-  border: none;
-  padding: 0.65rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.9rem;
+  border: 1px solid #34d399;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(6, 78, 59, 0.25);
-  transition: all 0.15s;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .advance-stage-btn:hover {
-  background: #065f46;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+  filter: brightness(1.1);
 }
 
 .advance-stage-btn.disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Stepper Horizontal */
@@ -858,11 +1342,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f8fafc;
-  border: 1px solid var(--slate-border);
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
   overflow-x: auto;
   gap: 0.5rem;
 }
@@ -870,48 +1354,53 @@ body {
 .step-node {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
   cursor: pointer;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  transition: all 0.15s;
+  padding: 0.6rem 0.95rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .step-node:hover {
-  background: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .step-node.selected {
-  background: var(--pure-white);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  background: var(--surface-card-hover);
+  border: 1px solid var(--surface-glass-border-hover);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .step-circle {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 0.85rem;
+  font-weight: 900;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
 }
 
 .step-node.completed .step-circle {
-  background: #22c55e;
+  background: linear-gradient(135deg, #10b981, #059669);
   color: #ffffff;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
 }
 
 .step-node.in_progress .step-circle {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, #f59e0b, #d97706);
   color: #ffffff;
-  box-shadow: 0 0 0 4px rgba(6, 78, 59, 0.2);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+  animation: pulseGlow 2s infinite ease-in-out;
 }
 
 .step-node.upcoming .step-circle {
-  background: #cbd5e1;
-  color: #475569;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .step-content {
@@ -920,252 +1409,314 @@ body {
 }
 
 .step-num-label {
-  font-size: 0.7rem;
-  color: var(--slate-subtle);
-  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 700;
 }
 
 .step-name {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 800;
-  color: var(--judicial-slate);
+  color: var(--text-primary);
 }
 
 .step-connector {
-  width: 20px;
-  height: 2px;
-  background: #cbd5e1;
-  margin: 0 0.25rem;
+  flex: 1;
+  min-width: 20px;
+  height: 3px;
+  background: var(--surface-glass-border);
+  margin: 0 0.35rem;
+  border-radius: 9999px;
 }
 
 /* Stage Detail Inspector */
 .stage-detail-inspector {
-  background: #fcfcfd;
-  border: 1px solid var(--slate-border);
-  border-radius: 12px;
-  padding: 1.5rem;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
 .stage-inspector-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--slate-border);
-  padding-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.inspector-stage-tag {
-  font-size: 0.8rem;
+.stage-badge-large {
+  font-size: 0.82rem;
   font-weight: 800;
-  color: var(--imperial-gold);
+  padding: 0.3rem 0.85rem;
+  border-radius: 8px;
+}
+
+.stage-badge-large.completed {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.stage-badge-large.in_progress {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.stage-badge-large.upcoming {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+
+/* Stage Inspector Top Metadata */
+.inspector-stage-tag {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
 }
 
 .inspector-title {
-  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
   font-weight: 900;
-  color: var(--primary-emerald);
-  margin-top: 0.2rem;
+  color: var(--text-primary);
 }
 
 .inspector-desc {
   font-size: 0.95rem;
-  color: var(--slate-muted);
+  color: var(--text-muted);
   margin-top: 0.25rem;
+  line-height: 1.6;
 }
 
 .deadline-block {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .deadline-badge {
-  background: #fff1f2;
-  color: #be123c;
-  border: 1px solid #fecdd3;
-  padding: 0.3rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.8rem;
-  font-weight: 700;
+  background: rgba(14, 165, 233, 0.15);
+  color: #7dd3fc;
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
 }
 
 .status-pill {
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.25rem 0.7rem;
-  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
 }
 
-.status-pill.completed { background: #dcfce7; color: #15803d; }
-.status-pill.in_progress { background: #fef3c7; color: #b45309; }
-.status-pill.upcoming { background: #f1f5f9; color: #64748b; }
+.status-pill.completed {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.status-pill.in_progress {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.status-pill.upcoming {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 .deadline-alert-banner {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
-  color: #92400e;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  margin-bottom: 1.25rem;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.92rem;
+  color: #fca5a5;
+  margin: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .inspector-section {
-  margin-bottom: 1.5rem;
+  margin-top: 1.75rem;
+  border-top: 1px dashed var(--surface-glass-border);
+  padding-top: 1.25rem;
 }
 
 .section-heading {
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
   font-weight: 800;
-  color: var(--judicial-slate);
-  margin-bottom: 0.75rem;
+  color: var(--text-gold);
+  margin-bottom: 0.85rem;
 }
 
 .actions-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
 }
 
 .action-item {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  background: #ffffff;
-  border: 1px solid var(--slate-border);
-  padding: 0.65rem 1rem;
-  border-radius: 8px;
+  gap: 0.75rem;
   font-size: 0.92rem;
-  color: var(--slate-muted);
+  color: var(--text-secondary);
 }
 
 .check-icon {
-  background: #dcfce7;
-  color: #16a34a;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 800;
+  color: #10b981;
+  font-weight: 900;
 }
 
-/* Virtual Session Minutes */
+/* Session Minutes & Hearing Panel */
 .session-minute-box {
-  background: #ffffff;
-  border: 1.5px solid #064e3b;
-  border-radius: 10px;
-  padding: 1.25rem;
+  background: var(--surface-card);
+  border: 1.5px solid var(--surface-glass-border);
+  border-radius: 14px;
+  padding: 1.4rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .minute-header {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid var(--surface-glass-border);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
   font-size: 0.85rem;
-  color: var(--slate-subtle);
-  border-bottom: 1px solid var(--slate-border);
-  padding-bottom: 0.6rem;
-  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .minute-remarks {
   font-size: 0.92rem;
-  color: var(--judicial-slate);
-  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
 }
 
 .minute-transcript {
+  background: rgba(2, 11, 8, 0.6);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+[data-theme="light"] .minute-transcript {
   background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 1rem;
 }
 
 .transcript-title {
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--primary-emerald);
+  color: var(--imperial-gold);
   margin-bottom: 0.5rem;
 }
 
 .transcript-pre {
-  font-family: inherit;
-  font-size: 0.9rem;
-  white-space: pre-line;
-  color: #334155;
-  line-height: 1.8;
+  font-family: var(--font-arabic);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
-/* Evidence mini-cards */
+/* Submitted Evidence Mini Cards */
 .evidence-cards-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
 .evidence-mini-card {
-  background: #ffffff;
-  border: 1px solid var(--slate-border);
-  border-radius: 10px;
-  padding: 1rem;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 12px;
+  padding: 1.15rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .ev-top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .ev-type-tag {
   font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--slate-subtle);
+  font-weight: 800;
+  color: var(--imperial-gold);
 }
 
 .ev-probative {
   font-size: 0.75rem;
   font-weight: 800;
-  color: #16a34a;
+  color: #34d399;
 }
 
 .ev-title {
-  font-size: 0.95rem;
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
   font-weight: 800;
-  color: var(--judicial-slate);
+  color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
 
 .ev-desc {
   font-size: 0.85rem;
-  color: var(--slate-subtle);
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
 
 .ev-basis {
   font-size: 0.78rem;
-  color: var(--emerald-medium);
+  color: #34d399;
   font-weight: 700;
 }
 
-/* Verdict Box */
+/* Verdict & Judgment Banner */
 .verdict-banner-box {
-  background: linear-gradient(to left, #f0fdf4, #e6f7ec);
-  border: 2px solid #86efac;
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.6) 0%, rgba(217, 119, 6, 0.35) 100%);
+  border: 2px solid #fbbf24;
+  border-radius: 14px;
+  padding: 1.5rem;
   display: flex;
-  gap: 1.25rem;
   align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
 }
 
 .verdict-icon {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 
 .verdict-body {
@@ -1173,525 +1724,753 @@ body {
 }
 
 .verdict-title {
-  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
   font-weight: 900;
-  color: var(--primary-emerald);
+  color: #fde68a;
+  margin-bottom: 0.35rem;
 }
 
 .verdict-text {
-  font-size: 0.95rem;
-  color: #166534;
-  margin: 0.35rem 0 0.75rem 0;
-  line-height: 1.7;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.8;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .inspect-deed-btn {
-  background: var(--primary-emerald);
-  color: #ffffff;
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  color: #020b08;
   border: none;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 0.85rem;
+  font-weight: 900;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.15s;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .inspect-deed-btn:hover {
-  background: #022c22;
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.6);
 }
 
 /* =========================================================================
-   3. Legal Calculators View
+   3. Calculators View (الحاسبات القضائية والعمالية)
    ========================================================================= */
+.calculators-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
 .calc-tabs-bar {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.65rem;
   overflow-x: auto;
+  padding-bottom: 0.5rem;
 }
 
 .calc-tab-btn {
-  background: var(--pure-white);
-  border: 1.5px solid var(--slate-border);
-  padding: 0.75rem 1.25rem;
-  border-radius: 10px;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 14px;
+  padding: 0.85rem 1.5rem;
   font-size: 0.95rem;
   font-weight: 800;
-  color: var(--slate-muted);
+  color: var(--text-muted);
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.15s;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--card-shadow);
 }
 
 .calc-tab-btn:hover {
-  border-color: var(--emerald-medium);
+  background: var(--surface-card-hover);
+  color: var(--text-primary);
+  border-color: var(--surface-glass-border-hover);
+  transform: translateY(-1px);
 }
 
 .calc-tab-btn.active {
-  background: var(--primary-emerald);
-  color: #ffffff;
-  border-color: var(--primary-emerald);
-  box-shadow: 0 4px 10px rgba(6, 78, 59, 0.25);
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.5) 0%, rgba(15, 23, 42, 0.85) 100%);
+  color: #f8fafc;
+  border-color: #fbbf24;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.25), inset 0 1px 0 rgba(251, 191, 36, 0.3);
+}
+
+[data-theme="light"] .calc-tab-btn.active {
+  background: #ecfdf5;
+  color: #064e3b;
+  border-color: #10b981;
 }
 
 .calc-content-card {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 14px;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+}
+
+/* Forms & Inputs inside Calculators */
+.calc-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.form-input, .form-select, .form-textarea {
+  background: var(--surface-input);
+  color: var(--text-primary);
+  border: 1.5px solid var(--surface-glass-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.98rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+
+/* Custom Range Sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #064e3b, #d97706);
+  outline: none;
+  margin: 0.75rem 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fbbf24;
+  cursor: pointer;
+  border: 2px solid #020b08;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
+  transition: all 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Visual Breakdown Cards */
+.calc-breakdown-card {
+  background: var(--surface-subtle);
+  border: 1.5px solid var(--surface-glass-border);
+  border-radius: 16px;
   padding: 1.75rem;
   box-shadow: var(--card-shadow);
 }
 
-.calc-inner-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.breakdown-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--text-gold);
+  margin-bottom: 1.25rem;
 }
 
-@media (max-width: 900px) {
+.breakdown-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.breakdown-stat-unit {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 12px;
+  padding: 1.15rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.b-stat-lbl {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.b-stat-val {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #34d399;
+  margin-top: 0.35rem;
+}
+
+.b-stat-val.gold-highlight {
+  color: #fbbf24;
+}
+
+/* Progress summary bars */
+.breakdown-progress-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin: 0.75rem 0;
+  display: flex;
+}
+
+.bar-segment-emerald {
+  background: linear-gradient(90deg, #10b981, #059669);
+  height: 100%;
+}
+
+.bar-segment-gold {
+  background: linear-gradient(90deg, #fbbf24, #d97706);
+  height: 100%;
+}
+
+/* Calculator Inner Layout & Results Panes */
+.calc-inner-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
   .calc-inner-grid {
     grid-template-columns: 1fr;
   }
 }
 
+.calc-inputs-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 .calc-pane-title h4 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--primary-emerald);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--text-primary);
 }
 
 .calc-pane-title p {
-  font-size: 0.85rem;
-  color: var(--slate-subtle);
-  margin-bottom: 1.25rem;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--judicial-slate);
-  margin-bottom: 0.35rem;
-}
-
-.form-input, .form-select, .form-textarea {
-  width: 100%;
-  padding: 0.65rem 0.85rem;
-  font-size: 0.95rem;
-  border: 1.5px solid var(--slate-border);
-  border-radius: 8px;
-  font-family: inherit;
-  transition: all 0.15s;
-  background: #ffffff;
-}
-
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-  outline: none;
-  border-color: var(--primary-emerald);
-  box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
-}
-
-.form-row-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.form-check-group {
-  margin-top: 1rem;
-}
-
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   font-size: 0.88rem;
-  cursor: pointer;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
 }
 
 .calc-divider {
   border: none;
-  border-top: 1px dashed var(--slate-border);
-  margin: 1.25rem 0;
+  border-top: 1px dashed var(--surface-glass-border);
+  margin: 0.75rem 0;
 }
 
 .sub-pane-title {
-  font-size: 0.95rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
   font-weight: 800;
-  color: var(--imperial-gold);
-  margin-bottom: 0.85rem;
+  color: var(--text-gold);
 }
 
-/* Results Pane */
+.calc-results-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Hero Entitlement Display */
 .total-entitlement-hero {
-  background: linear-gradient(135deg, #064e3b, #047857);
-  color: #ffffff;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.45) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1.5px solid #10b981;
+  border-radius: 16px;
   padding: 1.75rem;
-  border-radius: 14px;
   text-align: center;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 8px 20px rgba(6, 78, 59, 0.25);
+  box-shadow: 0 8px 25px -5px rgba(16, 185, 129, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .total-entitlement-hero {
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+  border-color: #059669;
+  box-shadow: 0 4px 15px rgba(6, 78, 59, 0.12);
 }
 
 .total-entitlement-hero.exempt {
-  background: linear-gradient(135deg, #0369a1, #0284c7);
+  border-color: #fbbf24;
+  box-shadow: 0 8px 25px -5px rgba(245, 158, 11, 0.3);
 }
 
 .hero-label {
-  font-size: 0.95rem;
-  opacity: 0.9;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-gold);
+  margin-bottom: 0.5rem;
 }
 
 .hero-number {
-  font-size: 2.8rem;
+  font-family: var(--font-heading);
+  font-size: 2.35rem;
   font-weight: 900;
-  line-height: 1.2;
-  margin: 0.25rem 0;
+  color: #34d399;
+  letter-spacing: -0.5px;
 }
 
-.sar-unit {
-  font-size: 1.2rem;
-  font-weight: 700;
+[data-theme="light"] .hero-number {
+  color: #064e3b;
+}
+
+.hero-number .sar-unit {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--imperial-gold);
+  margin-right: 0.25rem;
 }
 
 .hero-sub {
+  display: block;
   font-size: 0.85rem;
-  opacity: 0.85;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  line-height: 1.6;
 }
 
+/* Entitlements Breakdown Stack */
 .entitlements-breakdown-list {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-bottom: 1.5rem;
 }
 
 .breakdown-item {
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f8fafc;
-  border: 1px solid var(--slate-border);
-  padding: 0.85rem 1rem;
-  border-radius: 8px;
+  gap: 1rem;
+  transition: all 0.2s ease;
+}
+
+.breakdown-item:hover {
+  background: var(--surface-card-hover);
+  border-color: var(--surface-glass-border-hover);
 }
 
 .breakdown-item.highlight-green {
+  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(6, 78, 59, 0.2);
+}
+
+[data-theme="light"] .breakdown-item.highlight-green {
   background: #f0fdf4;
   border-color: #86efac;
 }
 
+.item-title-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .item-title-col strong {
-  display: block;
-  font-size: 0.92rem;
-  color: var(--judicial-slate);
+  font-size: 0.95rem;
+  color: var(--text-primary);
 }
 
 .item-title-col span {
-  font-size: 0.78rem;
-  color: var(--slate-subtle);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
 }
 
 .item-amount {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--primary-emerald);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #34d399;
+  white-space: nowrap;
 }
 
-.statutory-basis-box {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
-  border-radius: 8px;
-  padding: 1rem;
-  font-size: 0.85rem;
-  color: #92400e;
+[data-theme="light"] .item-amount {
+  color: #064e3b;
 }
 
-.statutory-basis-box ul {
-  list-style: none;
-  margin-top: 0.35rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
+/* Exemption Card */
 .exemption-card-box {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: 12px;
+  padding: 1.15rem;
   display: flex;
   gap: 1rem;
   align-items: center;
-  background: #e0f2fe;
-  border: 1px solid #bae6fd;
-  color: #0369a1;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
 }
 
 .ex-icon {
   font-size: 2rem;
 }
 
-/* Shares Table */
+/* Statutory Basis Box */
+.statutory-basis-box {
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 12px;
+  padding: 1.15rem;
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+.statutory-basis-box strong {
+  display: block;
+  color: var(--text-gold);
+  margin-bottom: 0.45rem;
+}
+
+.statutory-basis-box ul {
+  list-style: none;
+  color: var(--text-secondary);
+}
+
+.statutory-basis-box li {
+  margin-bottom: 0.35rem;
+}
+
+/* Islamic Shares Table */
 .shares-table-wrapper {
   overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--surface-glass-border);
 }
 
 .shares-table {
   width: 100%;
   border-collapse: collapse;
+  text-align: right;
   font-size: 0.9rem;
 }
 
 .shares-table th {
-  background: #f1f5f9;
-  color: var(--judicial-slate);
-  padding: 0.65rem 0.75rem;
-  text-align: right;
+  background: rgba(2, 20, 16, 0.7);
+  color: var(--text-gold);
   font-weight: 800;
-  border-bottom: 2px solid var(--slate-border);
+  padding: 0.85rem 1rem;
+  border-bottom: 1.5px solid var(--surface-glass-border);
+}
+
+[data-theme="light"] .shares-table th {
+  background: #f1f5f9;
+  color: #064e3b;
+  border-color: #cbd5e1;
 }
 
 .shares-table td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--surface-glass-border);
+  color: var(--text-primary);
 }
 
 .share-reason-sub {
-  font-size: 0.75rem;
-  color: var(--slate-subtle);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
 }
 
 .fraction-badge {
-  background: #fef3c7;
-  color: #92400e;
-  padding: 0.15rem 0.5rem;
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 0.15rem 0.6rem;
   border-radius: 6px;
   font-weight: 800;
+  font-size: 0.82rem;
+}
+
+[data-theme="light"] .fraction-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
 }
 
 .amount-cell {
-  font-weight: 700;
-  color: var(--slate-muted);
+  font-weight: 800;
+  color: #34d399;
+}
+
+[data-theme="light"] .amount-cell {
+  color: #064e3b;
 }
 
 .amount-cell.total-cell {
-  color: var(--primary-emerald);
-  font-weight: 800;
+  color: var(--imperial-gold);
 }
 
 .mahjoob-row {
   opacity: 0.55;
-  background: #f8fafc;
 }
 
 /* =========================================================================
-   4. Evidence & Burden of Proof Matrix
+   4. Evidence Matrix View (مصفوفة الإثبات والبينات)
    ========================================================================= */
+.evidence-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .gauge-hero-card {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 14px;
-  padding: 1.5rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 18px;
+  padding: 2rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 2.5rem;
   box-shadow: var(--card-shadow);
+  flex-wrap: wrap;
 }
 
 .gauge-left {
-  flex-shrink: 0;
+  flex: 0 0 200px;
+  display: flex;
+  justify-content: center;
 }
 
 .speedometer-box {
-  width: 170px;
   position: relative;
-  text-align: center;
+  width: 180px;
 }
 
 .speedometer-svg {
   width: 100%;
-  height: auto;
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.3));
 }
 
 .gauge-center-text {
   position: absolute;
-  bottom: 0;
+  bottom: 8px;
   left: 0;
   right: 0;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .gauge-score {
-  font-size: 1.8rem;
+  font-size: 1.85rem;
   font-weight: 900;
-  color: var(--judicial-slate);
+  color: #34d399;
+  line-height: 1;
 }
 
 .gauge-label {
-  font-size: 0.75rem;
-  color: var(--slate-subtle);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-top: 0.2rem;
 }
 
 .gauge-right {
   flex: 1;
+  min-width: 280px;
 }
 
 .rating-badge {
-  display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  padding: 0.25rem 0.75rem;
-  border-radius: 6px;
+  padding: 0.3rem 0.85rem;
+  border-radius: 8px;
+  display: inline-block;
   margin-bottom: 0.5rem;
 }
 
-.tier-conclusive { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
-.tier-strong { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
-.tier-moderate { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
-.tier-weak { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+.rating-badge.tier-conclusive {
+  background: rgba(16, 185, 129, 0.25);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+}
 
 .gauge-title {
-  font-size: 1.3rem;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
   font-weight: 900;
-  color: var(--primary-emerald);
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
 }
 
 .gauge-desc {
-  font-size: 0.92rem;
-  color: var(--slate-muted);
-  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
   line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
 .claim-limit-row {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  font-weight: 700;
+  gap: 0.85rem;
+  flex-wrap: wrap;
 }
 
 .small-claim-input {
-  width: 120px;
-  padding: 0.3rem 0.5rem;
-  font-size: 0.88rem;
-  border: 1px solid var(--slate-border);
-  border-radius: 6px;
+  background: var(--surface-input);
+  color: var(--text-primary);
+  border: 1.5px solid var(--surface-glass-border);
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 800;
+  font-size: 0.92rem;
 }
 
 .limit-warn-tag {
-  background: #fff1f2;
-  color: #be123c;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
 }
 
 .evidence-main-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .evidence-main-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.evidences-list-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .pane-header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .pane-header-row h4 {
-  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
   font-weight: 800;
-  color: var(--judicial-slate);
+  color: var(--text-primary);
 }
 
 .add-evidence-btn {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, #10b981, #059669);
   color: #ffffff;
-  border: none;
-  padding: 0.45rem 1rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  border: 1px solid #34d399;
+  border-radius: 8px;
+  padding: 0.5rem 1.15rem;
+  font-weight: 800;
+  font-size: 0.88rem;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.2s ease;
 }
 
 .add-evidence-btn:hover {
-  background: #022c22;
-}
-
-.evidence-items-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
 }
 
 .evidence-full-card {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 12px;
-  padding: 1.25rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 14px;
+  padding: 1.4rem;
   box-shadow: var(--card-shadow);
+  transition: all 0.2s ease;
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.ev-tag-row {
-  display: flex;
-  gap: 0.5rem;
+.evidence-full-card:hover {
+  border-color: var(--surface-glass-border-hover);
+  transform: translateY(-2px);
 }
 
 .type-badge {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  padding: 0.2rem 0.6rem;
+  padding: 0.2rem 0.65rem;
   border-radius: 6px;
-  background: #f1f5f9;
-  color: #334155;
 }
 
-.type-badge.digital { background: #e0f2fe; color: #0284c7; }
-.type-badge.official_deed { background: #dcfce7; color: #16a34a; }
-.type-badge.ordinary_paper { background: #fef3c7; color: #d97706; }
+.type-badge.digital {
+  background: rgba(14, 165, 233, 0.2);
+  color: #7dd3fc;
+  border: 1px solid rgba(14, 165, 233, 0.4);
+}
+
+.type-badge.ordinary_paper {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.type-badge.expert_report {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
 
 .status-tag {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 6px;
 }
 
-.status-conclusive { background: #ecfdf5; color: #059669; }
-.status-challenged { background: #fff1f2; color: #e11d48; }
+.status-tag.status-conclusive {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
 
 .delete-ev-btn {
   background: transparent;
   border: none;
-  color: #94a3b8;
-  font-size: 0.95rem;
+  color: var(--text-muted);
   cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.2rem 0.4rem;
 }
 
 .delete-ev-btn:hover {
@@ -1699,141 +2478,133 @@ body {
 }
 
 .ev-card-title {
+  font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 800;
-  color: var(--judicial-slate);
-  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+  margin: 0.5rem 0 0.35rem 0;
 }
 
 .ev-card-desc {
-  font-size: 0.88rem;
-  color: var(--slate-muted);
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.85rem;
 }
 
 .ev-footer-meta {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  font-size: 0.82rem;
-  color: var(--slate-subtle);
-  border-top: 1px dashed var(--slate-border);
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed var(--surface-glass-border);
   padding-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .probative-meter-block {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.25rem;
+  gap: 0.5rem;
 }
 
 .meter-bar {
-  flex: 1;
+  width: 90px;
   height: 8px;
-  background: #e2e8f0;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 9999px;
   overflow: hidden;
 }
 
 .meter-fill {
   height: 100%;
-  background: linear-gradient(to right, #10b981, #059669);
+  background: linear-gradient(90deg, #f59e0b, #10b981);
+  border-radius: 9999px;
 }
 
-.advice-card {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 12px;
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
+/* Strategic Advice & Recommendations Pane */
+.evidence-advice-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.advice-card, .missing-evidence-card, .evidence-law-quick-ref {
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 14px;
+  padding: 1.5rem;
   box-shadow: var(--card-shadow);
 }
 
 .advice-title {
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
   font-weight: 800;
-  color: var(--primary-emerald);
-  margin-bottom: 0.6rem;
+  color: var(--text-gold);
+  margin-bottom: 0.85rem;
 }
 
-.advice-list {
+.advice-list, .missing-list, .statutory-rank-list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.88rem;
-  color: var(--slate-muted);
-  line-height: 1.6;
-}
-
-.missing-evidence-card {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
-  border-radius: 12px;
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-.missing-title {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #b45309;
-  margin-bottom: 0.5rem;
-}
-
-.missing-list {
-  list-style: none;
-  font-size: 0.85rem;
-  color: #92400e;
-  line-height: 1.6;
-}
-
-.evidence-law-quick-ref {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 12px;
-  padding: 1.25rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   line-height: 1.8;
+  color: var(--text-secondary);
 }
 
-.evidence-law-quick-ref h4 {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--judicial-slate);
-  margin-bottom: 0.5rem;
+.advice-list li {
+  margin-bottom: 0.45rem;
+  color: #34d399;
 }
 
-.statutory-rank-list {
-  padding-right: 1.2rem;
-  color: var(--slate-muted);
+.missing-list li {
+  color: #fca5a5;
+  margin-bottom: 0.45rem;
+}
+
+.statutory-rank-list li {
+  margin-bottom: 0.65rem;
 }
 
 /* =========================================================================
-   5. Pleading & Retainer Drafter View
+   5. Document Drafter View (محرر اللوائح والعقود المعتمد)
    ========================================================================= */
+.drafter-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
 .drafter-toolbar-card {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 14px;
-  padding: 1.25rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 18px;
+  padding: 1.25rem 1.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
   box-shadow: var(--card-shadow);
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.template-selector-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .toolbar-label {
-  display: block;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  color: var(--slate-subtle);
-  margin-bottom: 0.4rem;
+  color: var(--text-gold);
 }
 
 .template-buttons-row {
@@ -1843,388 +2614,960 @@ body {
 }
 
 .template-btn {
-  background: var(--slate-bg);
-  border: 1.5px solid var(--slate-border);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--judicial-slate);
+  color: var(--text-muted);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .template-btn:hover {
-  background: #e2e8f0;
+  background: var(--surface-card-hover);
+  color: var(--text-primary);
+  border-color: var(--surface-glass-border-hover);
 }
 
 .template-btn.active {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.5), rgba(4, 120, 87, 0.4));
   color: #ffffff;
-  border-color: var(--primary-emerald);
+  border-color: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
 }
 
 .drafter-export-actions {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.75rem;
 }
 
 .action-btn {
-  padding: 0.55rem 1.1rem;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.88rem;
-  cursor: pointer;
   border: none;
-  transition: all 0.15s;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .print-btn {
-  background: linear-gradient(135deg, var(--imperial-gold), var(--gold-dark));
+  background: linear-gradient(135deg, #10b981, #059669);
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.print-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
 }
 
 .copy-btn {
-  background: var(--slate-bg);
-  border: 1px solid var(--slate-border);
-  color: var(--judicial-slate);
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  color: var(--text-primary);
 }
 
+.copy-btn:hover {
+  background: var(--surface-card-hover);
+  border-color: #fbbf24;
+}
+
+/* Split Screen Layout */
 .drafter-split-container {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 2rem;
+  align-items: start;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .drafter-split-container {
     grid-template-columns: 1fr;
   }
 }
 
 .drafter-form-pane {
-  background: var(--pure-white);
-  border: 1px solid var(--slate-border);
-  border-radius: 14px;
-  padding: 1.5rem;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 18px;
+  padding: 1.75rem;
   box-shadow: var(--card-shadow);
-  max-height: 850px;
-  overflow-y: auto;
 }
 
 .pane-title-box h4 {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--primary-emerald);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--text-primary);
 }
 
 .pane-title-box p {
   font-size: 0.85rem;
-  color: var(--slate-subtle);
-  margin-bottom: 1.25rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  margin-bottom: 1.5rem;
 }
 
+.form-scrollable-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Live Judicial Preview Pane */
 .drafter-preview-pane {
-  background: transparent;
+  background: var(--surface-card);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
 }
 
 .preview-badge-row {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .preview-badge {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 800;
-  color: var(--primary-emerald);
+  color: var(--text-gold);
+}
+
+/* Authentic Official Saudi Judicial Pleading Styling */
+.judicial-doc-container.official-parchment-sheet {
+  background: #faf8f5;
+  color: #0f172a;
+  border: 3px double #d97706;
+  border-radius: 14px;
+  padding: 2.75rem 2.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(217, 119, 6, 0.05);
+  font-family: var(--font-arabic);
+  line-height: 1.9;
+  position: relative;
+}
+
+/* Calligraphic Islamic Basmala Header */
+.judicial-basmala-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.basmala-text {
+  font-family: var(--font-traditional);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #064e3b;
+  letter-spacing: 0.5px;
+}
+
+.basmala-ornament-left, .basmala-ornament-right {
+  color: #d97706;
+  font-size: 1.1rem;
+}
+
+/* Official Kingdom Header */
+.official-judicial-header {
+  border-bottom: 2px solid #064e3b;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.seal-kingdom-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.seal-ministry-name {
+  font-size: 0.95rem;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.seal-court-spec {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-top: 0.25rem;
+}
+
+.header-emblem-column {
+  text-align: center;
+}
+
+.emblem-judicial-crest {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.emblem-saudi-tag {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #064e3b;
+  margin-top: 0.2rem;
+}
+
+/* Electronic Verification & QR Watermark */
+.header-electronic-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.qr-watermark-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.qr-verification-details {
+  font-size: 0.8rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.najiz-verified-strip {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #047857;
+}
+
+/* Document Title Ribbon Banner */
+.judicial-title-banner {
+  text-align: center;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.banner-ribbon-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d97706);
+}
+
+.banner-ribbon-line:last-child {
+  background: linear-gradient(90deg, #d97706, transparent);
+}
+
+.banner-title-text {
+  font-family: var(--font-heading);
+  background: #ecfdf5;
+  color: #064e3b;
+  border: 1.5px solid #059669;
+  padding: 0.65rem 2rem;
+  border-radius: 9999px;
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.1);
+}
+
+/* Parties Card */
+.judicial-parties-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.party-entry {
+  padding: 0.45rem 0;
+}
+
+.party-role-tag {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #064e3b;
+  margin-bottom: 0.35rem;
+}
+
+.party-role-tag.defendant-role {
+  color: #b45309;
+}
+
+.party-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.party-name-strong {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.party-id-chip {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 0.15rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #334155;
+}
+
+.party-address-line {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.parties-divider-line {
+  text-align: center;
+  position: relative;
+  margin: 1rem 0;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.divider-vs {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #faf8f5;
+  padding: 0 1rem;
+  font-weight: 900;
+  color: #d97706;
+  font-size: 0.88rem;
+}
+
+.litigation-subject-bar {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sar-amount {
+  font-weight: 900;
+  color: #047857;
+  font-size: 1.1rem;
+}
+
+/* Judicial Sections */
+.judicial-section-block {
+  margin-bottom: 2rem;
+}
+
+.section-ornate-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-num-emblem {
+  background: #064e3b;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+}
+
+.section-num-emblem.gold-emblem {
+  background: #b45309;
+}
+
+.section-num-emblem.royal-emblem {
+  background: #d97706;
+}
+
+.section-header-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.gold-header .section-header-title {
+  color: #b45309;
+}
+
+.royal-header .section-header-title {
+  color: #d97706;
+}
+
+.section-body-text {
+  text-align: justify;
+  color: #1e293b;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.statutory-grounding-box {
+  background: #ecfdf5;
+  border: 1.5px solid #a7f3d0;
+  border-radius: 10px;
+  padding: 1.15rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.grounding-header {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #064e3b;
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grounding-content {
+  font-size: 0.98rem;
+  color: #065f46;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.relief-body-card {
+  background: #ffffff;
+  border: 2px solid #064e3b;
+  border-radius: 10px;
+  padding: 1.4rem;
+  color: #0f172a;
+  white-space: pre-line;
+  line-height: 2;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(6, 78, 59, 0.08);
+}
+
+.retainer-financial-schedule {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.schedule-title {
+  font-weight: 900;
+  color: #92400e;
+  margin-bottom: 0.75rem;
+  font-size: 0.98rem;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.sched-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.sched-lbl {
+  font-size: 0.82rem;
+  color: #78350f;
+}
+
+.sched-val {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #064e3b;
+  margin-top: 0.2rem;
+}
+
+/* Document Signatures Footer */
+.judicial-doc-footer {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid #064e3b;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.attorney-signature-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.sig-label {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.attorney-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #064e3b;
+  margin-top: 0.35rem;
+}
+
+.license-info {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.signature-line-mark {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.official-stamp-box {
+  border: 2px dashed #064e3b;
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  background: #ecfdf5;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.08);
+}
+
+.stamp-inner-border {
+  border: 1px solid #10b981;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+}
+
+.stamp-emblem {
+  font-size: 1.6rem;
+}
+
+.stamp-org {
+  font-weight: 900;
+  font-size: 0.88rem;
+  color: #064e3b;
+  margin-top: 0.2rem;
+}
+
+.stamp-audit {
+  font-size: 0.76rem;
+  color: #047857;
+  font-weight: 700;
+}
+
+.stamp-id {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-family: var(--font-latin);
+  margin-top: 0.2rem;
 }
 
 /* =========================================================================
-   Modal Dialogs
+   6. Glassmorphism Modal Dialogs
    ========================================================================= */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(4px);
+  background: rgba(2, 11, 8, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+[data-theme="light"] .modal-backdrop {
+  background: rgba(15, 23, 42, 0.65);
 }
 
 .modal-card {
-  background: var(--pure-white);
-  border-radius: 16px;
-  border: 1px solid var(--slate-border);
+  background: var(--surface-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 20px;
+  border: 1.5px solid var(--surface-glass-border-hover);
   width: 100%;
-  max-width: 760px;
+  max-width: 800px;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(217, 119, 6, 0.25);
   overflow: hidden;
+  animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .modal-card.wide-card {
-  max-width: 860px;
+  max-width: 900px;
 }
 
 .modal-header {
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--slate-border);
+  padding: 1.35rem 1.75rem;
+  border-bottom: 1px solid var(--surface-glass-border);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: #f8fafc;
+  background: rgba(2, 20, 16, 0.5);
 }
 
 .modal-badge {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: var(--imperial-gold);
 }
 
 .modal-title {
-  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
   font-weight: 900;
-  color: var(--primary-emerald);
-  margin-top: 0.2rem;
+  color: var(--text-primary);
+  margin-top: 0.3rem;
 }
 
 .modal-close-btn {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  font-size: 1.3rem;
-  color: #94a3b8;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: var(--text-muted);
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
 .modal-close-btn:hover {
-  color: #ef4444;
+  background: #ef4444;
+  color: #ffffff;
+  transform: rotate(90deg);
 }
 
 .modal-body {
-  padding: 1.5rem;
+  padding: 1.75rem;
   overflow-y: auto;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .statute-decree-box {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  color: var(--slate-muted);
-  margin-bottom: 1.25rem;
-}
-
-.modal-section {
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  padding: 0.95rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 
+.statute-decree-box strong {
+  color: var(--imperial-gold);
+}
+
+.modal-section {
+  margin-bottom: 1.75rem;
+}
+
 .section-title {
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
   font-weight: 800;
-  color: var(--judicial-slate);
-  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
 }
 
 .statutory-text-box {
-  background: #f0fdf4;
-  border: 1.5px solid #86efac;
-  border-radius: 10px;
-  padding: 1.25rem;
-  font-size: 1rem;
-  color: #064e3b;
+  background: rgba(6, 78, 59, 0.25);
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  border-radius: 12px;
+  padding: 1.35rem;
+  font-size: 1.05rem;
+  color: #6ee7b7;
   font-weight: 600;
-  line-height: 2;
+  line-height: 2.1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .statutory-text-box {
+  background: #ecfdf5;
+  color: #064e3b;
+  border-color: #86efac;
 }
 
 .commentary-box {
-  background: #f8fafc;
-  border: 1px solid var(--slate-border);
-  border-radius: 10px;
-  padding: 1.25rem;
-  font-size: 0.95rem;
-  color: var(--slate-muted);
-  line-height: 1.9;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 12px;
+  padding: 1.35rem;
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 2;
 }
 
 .weight-tags-row {
   display: flex;
   justify-content: space-between;
-  background: #f8fafc;
-  border: 1px solid var(--slate-border);
-  padding: 1rem;
-  border-radius: 8px;
-  gap: 1rem;
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  padding: 1.15rem;
+  border-radius: 10px;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .weight-title {
   display: block;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--slate-subtle);
-  margin-bottom: 0.35rem;
-}
-
-.weight-pill {
   font-size: 0.8rem;
-  font-weight: 800;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
 }
 
-.tags-cluster {
+.modal-footer {
+  padding: 1.15rem 1.75rem;
+  border-top: 1px solid var(--surface-glass-border);
   display: flex;
-  gap: 0.35rem;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  background: rgba(2, 20, 16, 0.5);
 }
 
-/* Precedent Card */
-.precedent-card {
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
+.footer-close-btn {
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  color: var(--text-primary);
+  padding: 0.6rem 1.35rem;
   border-radius: 10px;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-close-btn:hover {
+  background: var(--surface-card-hover);
+}
+
+.footer-print-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border: 1px solid #34d399;
+  padding: 0.6rem 1.35rem;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+  transition: all 0.2s ease;
+}
+
+.footer-print-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+/* Precedents List inside Modal */
+.precedents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.precedent-card {
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .p-top {
   display: flex;
   justify-content: space-between;
-  font-size: 0.82rem;
-  color: var(--primary-emerald);
+  font-size: 0.85rem;
+  color: var(--imperial-gold);
   font-weight: 800;
-  margin-bottom: 0.4rem;
-}
-
-.p-principle {
-  font-size: 0.92rem;
-  color: #1e293b;
   margin-bottom: 0.5rem;
 }
 
+.p-principle {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.p-principle strong {
+  color: #34d399;
+}
+
 .p-summary {
-  font-size: 0.85rem;
-  color: var(--slate-subtle);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-.modal-footer {
-  padding: 1rem 1.5rem;
-  border-top: 1px solid var(--slate-border);
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  background: #f8fafc;
-}
-
-.footer-close-btn {
-  background: var(--slate-bg);
-  border: 1px solid var(--slate-border);
-  color: var(--judicial-slate);
-  padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.footer-print-btn {
-  background: var(--primary-emerald);
-  color: #ffffff;
-  border: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* Certified Deed Specific */
+/* Certified Judgment Deed Specific Styles in Modal */
 .printable-body {
-  background: #ffffff;
+  background: #faf8f5;
+  color: #0f172a;
+  padding: 2.25rem;
+  border-radius: 12px;
 }
 
 .deed-seal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--primary-emerald);
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #064e3b;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
 }
 
 .header-emblem {
-  font-weight: 800;
-  color: var(--primary-emerald);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  color: #064e3b;
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 .qr-placeholder {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: #64748b;
 }
 
 .mock-qr {
-  border: 1px solid #cbd5e1;
-  padding: 0.4rem 0.75rem;
-  border-radius: 6px;
-  background: #f8fafc;
+  border: 1.5px solid #064e3b;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  background: #ffffff;
   font-weight: 800;
+  color: #064e3b;
+  margin-bottom: 0.25rem;
 }
 
 .deed-heading {
   text-align: center;
-  font-size: 1.4rem;
+  font-family: var(--font-traditional);
+  font-size: 1.75rem;
   font-weight: 900;
-  color: var(--primary-emerald);
-  margin-bottom: 1.5rem;
+  color: #064e3b;
+  margin-bottom: 1.75rem;
   letter-spacing: 0.5px;
 }
 
 .deed-parties-summary {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  padding: 1rem;
-  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 1.25rem;
+  border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.92rem;
+  color: #1e293b;
+}
+
+.deed-section {
+  margin-bottom: 1.75rem;
+}
+
+.deed-section h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #064e3b;
+  margin-bottom: 0.65rem;
 }
 
 .deed-verdict-box {
-  background: #f0fdf4;
+  background: #ecfdf5;
   border: 2px solid #064e3b;
-  border-radius: 10px;
-  padding: 1.25rem;
-  margin: 1.5rem 0;
+  border-radius: 12px;
+  padding: 1.4rem;
+  margin: 1.75rem 0;
+  box-shadow: 0 4px 15px rgba(6, 78, 59, 0.1);
+}
+
+.deed-verdict-box h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #064e3b;
+  margin-bottom: 0.5rem;
 }
 
 .verdict-strong-text {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: #064e3b;
-  line-height: 1.9;
+  line-height: 2;
 }
 
 .deed-footer-signatures {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #cbd5e1;
-  font-size: 0.85rem;
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 2px solid #064e3b;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+.deed-footer-signatures strong {
+  color: #064e3b;
+  display: inline-block;
+  margin-top: 0.25rem;
 }
 
 /* =========================================================================
-   Print Styles
+   Print Styles (flawless A4 Judicial Deed output)
    ========================================================================= */
 @media print {
   body {
@@ -2236,8 +3579,15 @@ body {
   .drafter-toolbar-card,
   .drafter-form-pane,
   .preview-badge-row,
-  .modal-backdrop {
+  .modal-backdrop,
+  .metrics-strip-wrapper {
     display: none !important;
+  }
+
+  #app-main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
   }
 
   .drafter-split-container {
@@ -2246,11 +3596,17 @@ body {
 
   .drafter-preview-pane {
     display: block !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
   }
 
-  .judicial-doc-container {
-    border: none !important;
+  .judicial-doc-container.official-parchment-sheet {
+    border: 2px solid #064e3b !important;
     box-shadow: none !important;
-    padding: 0 !important;
+    padding: 1.5rem !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
   }
 }
